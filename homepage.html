@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href=./css/style.css>
+<script>
+
+function ValidateForm()
+{
+    var name = document.ContactForm.Name;
+    var email = document.ContactForm.Email;
+    var phone = document.ContactForm.Telephone;
+    var whichClass = document.ContactForm.Class;
+    var comment = document.ContactForm.Comment
+    if (name.value == "")
+    {
+        window.alert("Please enter your name.");
+        name.focus();
+        return false;
+    }
+
+    if (email.value == "")
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+    if (email.value.indexOf("@", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+    if (email.value.indexOf(".", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    if (phone.value == "")
+    {
+        window.alert("Please enter your telephone number.");
+        phone.focus();
+        return false;
+    }
+
+    if (whichClass.selectedIndex < 1)
+    {
+        alert("Please tell us which class you want to apply.");
+        what.focus();
+        return false;
+    }
+
+    if (comment.value == "")
+    {
+        window.alert("Please provide a detailed description or comment.");
+        comment.focus();
+        return false;
+    }
+    return true;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Summer HTML Class</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#summer">HTML Class</a></li>
+    <li><a href="#application">Apply Class</a></li>
+  </ul>
+</nav>
+
+<article>
+  <h1 id="summer">HTML Class</h1>
+  <ul>
+      <li>Date : 7/10-7/21 Monday through Friday</li>
+      <li>Time : 3:00(pm)-5:00(pm)</li>
+      <li>Location : 7150 Rainbow Dr. San Jose, CA 95129</li>
+      <li>Content : How to make webpage using HTML tag</li>
+      <li>Cost
+          <ul>
+              <li>4 Students : $20 per hour</li>
+              <li>3 Students : $25 per hour</li>
+          </ul>
+      <li>Qualification
+         <ul>
+            <li>The student who wants to take this class should be 6 grader.</li>
+            <li>This is begining HTML class.</li>
+            <li>This class is the same class as Photoshop class.</li>
+            <li>At frist week, they are going to learn Photoshop, and at second weekm,they will learn HTML.</li>
+         </ul>
+       </li>
+      <li><b><em>Contact Information : Misoon(585-690-5270)</em></b></li>
+  </ul>
+</article>
+
+<article>
+  <h1 id="application">Apply Class</h1>
+  <div id="myForm">
+    <form method="post" action="mailto:mkwon33@gmail.com"
+    name="ContactForm" onsubmit="return ValidateForm();">
+      <div class="myRow">
+        <label class="labelCol" for="Name">Name</label>
+        <input type="text" name="Name" size=30  id="Name" />
+      </div>
+      <div class="myRow">
+        <label class="labelCol" for="Email">E-mail</label>
+        <input type="text" name="Email" size=30 id="Email" />
+      </div>
+      <div class="myRow">
+        <label class="labelCol" for="Telephone">Telephone</label>
+        <input type="text" name="Telephone" size=30 id="Telephone" />
+      </div>
+      <div class="myRow">
+      <label class="labelCol" for="Class">Which Class?</label>
+      <select name="Class" tabindex="15">
+          <option>  </option>
+          <option>Summer Java Class</option>
+          <option>Summer Photoshop,Homepage class</option>
+          <option>Java(Monday 4:00pm-6pm)</option>
+          <option>Java(Monday 7:30pm-9:30pm)</option>
+          <option>Java(Thuesday 4:00pm-6pm)</option>
+          <option>Java(Thuesday 7:30pm-9:30pm)</option>
+          <option>Java(Wednesday 4:00pm-6pm)</option>
+          <option>Java(Wednesday 7:30pm-9:30pm)</option>
+          <option>Computer Science AP Class</option>
+      </select>
+      </div>
+      <div>
+        <label class="labelCol" for="Comment">Comments</label>
+        <textarea name="Comment" id="Comment" rows="4" cols="55">
+        </textarea>
+      </div>
+      <div class="mySubmit">
+        <input type="submit" value="Apply" />
+        <input type="reset" value="Reset" />
+      </div>
+    </form>
+  </div>
+</article>
+
+<footer>Copyright &copy;Misoon Kwon </footer>
+
+</div>
+
+</body>
+</html>
